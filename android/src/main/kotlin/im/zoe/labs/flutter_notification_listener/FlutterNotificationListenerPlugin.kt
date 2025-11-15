@@ -2,11 +2,11 @@ package im.zoe.labs.flutter_notification_listener
 
 import android.app.ActivityManager
 import android.content.*
-import android.content.Context.RECEIVER_EXPORTED
 import android.os.Build
 import android.util.Log
 import androidx.annotation.NonNull
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import io.flutter.embedding.engine.FlutterEngineCache
 import io.flutter.embedding.engine.FlutterJNI
 import io.flutter.embedding.engine.plugins.FlutterPlugin
@@ -59,8 +59,8 @@ class FlutterNotificationListenerPlugin : FlutterPlugin, MethodChannel.MethodCal
     val intentFilter = IntentFilter()
     intentFilter.addAction(NotificationsHandlerService.NOTIFICATION_INTENT)
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-      mContext.registerReceiver(receiver, intentFilter, RECEIVER_EXPORTED)
-    }else {
+      ContextCompat.registerReceiver(mContext, receiver, intentFilter, ContextCompat.RECEIVER_EXPORTED)
+    } else {
       mContext.registerReceiver(receiver, intentFilter)
     }
     Log.i(TAG, "attached engine finished")

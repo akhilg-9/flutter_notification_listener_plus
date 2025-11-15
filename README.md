@@ -1,16 +1,22 @@
 <div align="center">
 
-# flutter_notification_listener
+# flutter_notification_listener_plus
 
-[![Version](https://img.shields.io/pub/v/flutter_notification_listener.svg)](https://pub.dartlang.org/packages/flutter_notification_listener)
-[![pub points](https://badges.bar/flutter_notification_listener/pub%20points)](https://pub.dev/packages/flutter_notification_listener/score)
-[![popularity](https://badges.bar/flutter_notification_listener/popularity)](https://pub.dev/packages/flutter_notification_listener/score)
-[![likes](https://badges.bar/flutter_notification_listener/likes)](https://pub.dev/packages/flutter_notification_listener/score)
-[![License](https://img.shields.io/badge/license-AL2-blue.svg)](https://github.com/jiusanzhou/flutter_notification_listener/blob/master/LICENSE)
+[![Version](https://img.shields.io/pub/v/flutter_notification_listener_plus.svg)](https://pub.dartlang.org/packages/flutter_notification_listener_plus)
+[![License](https://img.shields.io/badge/license-AL2-blue.svg)](https://github.com/akhilg-9/flutter_notification_listener_plus/blob/master/LICENSE)
 
-Flutter plugin to listen for all incoming notifications for Android.
+Flutter plugin to listen for all incoming notifications for Android with **Android 13-16+ compatibility fixes**.
+
+> **Note**: This is an enhanced fork of [flutter_notification_listener](https://pub.dev/packages/flutter_notification_listener) with critical fixes for Android 13+ devices. The original package crashes on Android 13+ release builds due to broadcast receiver registration issues.
 
 </div>
+
+## What's New in Plus Version
+
+- ✅ **Fixed Android 13-16+ crash** - Resolved `SecurityException: One of RECEIVER_EXPORTED or RECEIVER_NOT_EXPORTED should be specified`
+- ✅ **AndroidX Core compatibility** - Uses `ContextCompat` for better cross-version support
+- ✅ **Release build stability** - Works correctly in production builds on latest Android versions
+- ✅ **Future-proof** - Compatible with upcoming Android releases
 
 ---
 
@@ -21,16 +27,16 @@ Flutter plugin to listen for all incoming notifications for Android.
 - **Backgrounded**: execute the dart code in the background and auto start the service after reboot.
 - **Interactive**: the notification is interactive in flutter.
 
-## Installtion
+## Installation
 
-Open the `pubspec.yaml` file located inside the app folder, and add `flutter_notification_listener`: under `dependencies`.
+Open the `pubspec.yaml` file located inside the app folder, and add `flutter_notification_listener_plus`: under `dependencies`.
 ```yaml
 dependencies:
-  flutter_notification_listener: <latest_version>
+  flutter_notification_listener_plus: ^1.3.5
 ```
 
-The latest version is 
-[![Version](https://img.shields.io/pub/v/flutter_notification_listener.svg)](https://pub.dartlang.org/packages/flutter_notification_listener)
+The latest version is
+[![Version](https://img.shields.io/pub/v/flutter_notification_listener_plus.svg)](https://pub.dartlang.org/packages/flutter_notification_listener_plus)
 
 Then you should install it,
 - From the terminal: Run `flutter pub get`.

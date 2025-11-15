@@ -1,3 +1,11 @@
+## 1.3.5
+
+- **BREAKING FIX**: Fixed Android 13-16+ compatibility issue with broadcast receiver registration
+- Added AndroidX Core dependency for better compatibility
+- Updated receiver registration to use ContextCompat.RECEIVER_EXPORTED for Android 13+
+- Fixed SecurityException: "One of RECEIVER_EXPORTED or RECEIVER_NOT_EXPORTED should be specified"
+- Improved release build stability on latest Android versions
+
 ## 1.3.4
 
 - chore: support gradle plugin version
